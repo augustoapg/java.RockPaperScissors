@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.URL?>
+
+<!--
+    Name: Augusto Araujo Peres Goncalez
+    File:  FXMLRps.fxml
+    Other Files in this Project:
+    Main.java
+    FXMLRpsController.java
+    Rps.java
+    Player.java
+    main.css
+    
+    Main class: Main.java
+-->
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="araujope.FXMLRpsController" vgap="15" hgap="15">
+    
+    <!-- link to css file -->
+    <stylesheets>
+        <URL value="@css/main.css" />
+    </stylesheets>
+    
+    <!-- each column on the GridPane takes the same space -->
+    <columnConstraints>
+        <ColumnConstraints percentWidth="33.3" />
+        <ColumnConstraints percentWidth="33.3" />
+        <ColumnConstraints percentWidth="33.3" />
+    </columnConstraints>
+    <children>
+        
+        <!-- Header of the game -->
+        <Label text="Play Rock, Paper, Scissors!" id="header"
+               GridPane.rowIndex="0" GridPane.columnSpan="3" 
+               GridPane.halignment="CENTER" />
+        
+        <!-- Subtitle -->
+        <Label text="Choose your method of destruction:" GridPane.rowIndex="1"
+               GridPane.columnSpan="3" />
+        
+        <!-- Rock Image inside of a flow pane slightly larger so that it appears
+        as a border-->
+        <FlowPane id="rock" GridPane.rowIndex="2" GridPane.columnIndex="0" 
+                  minHeight="210" minWidth="210" maxWidth="210"
+                  GridPane.halignment="CENTER" alignment="CENTER"
+                  GridPane.valignment="CENTER">
+            <ImageView fx:id="imgRock" fitHeight="200" fitWidth="200"
+                       preserveRatio="false" onMouseClicked="#imgClicked">
+                <!-- Path to picture -->
+                <image>
+                    <Image url="@res/rock.png" />
+                </image>
+            </ImageView>
+        </FlowPane>
+        
+        <!-- Paper Image inside of a flow pane slightly larger so that it 
+        appears as a border-->
+        <FlowPane id="paper" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                  minHeight="210" minWidth="210" maxWidth="210"
+                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"
+                  alignment="CENTER">
+            <ImageView fx:id="imgPaper" fitHeight="200" fitWidth="200"
+                       preserveRatio="false" onMouseClicked="#imgClicked">
+                <!-- Path to picture -->
+                <image>
+                    <Image url="@res/paper.png" />
+                </image>
+            </ImageView>
+        </FlowPane>
+        
+        <!-- Scissor Image inside of a flow pane slightly larger so that it 
+        appears as a border-->
+        <FlowPane id="scissors" GridPane.rowIndex="2" GridPane.columnIndex="2"
+                  minHeight="210" minWidth="210" maxWidth="210"
+                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"
+                  alignment="CENTER">
+            <ImageView fx:id="imgScissors" fitHeight="200" fitWidth="200"
+                       preserveRatio="false" onMouseClicked="#imgClicked">
+                <!-- Path to picture -->
+                <image>
+                    <Image url="@res/scissors.png" />
+                </image>
+            </ImageView>
+        </FlowPane>
+        
+        <!-- Computer label -->
+        <Label text="Computer chooses:" GridPane.rowIndex="3" 
+               GridPane.columnIndex="0" GridPane.halignment="RIGHT"
+               GridPane.valignment="CENTER" />
+        <!-- Computer Image inside of a flow pane slightly larger so that it 
+        appears as a border-->
+        <FlowPane id="computer" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                  minWidth="210" minHeight="210" maxWidth="210"
+                  GridPane.halignment="CENTER" alignment="CENTER">
+            <ImageView fx:id="imgComputer" fitHeight="200" fitWidth="200" 
+                       preserveRatio="true">
+                <!-- Path to picture -->
+                <image>
+                    <Image url="@res/question.png" />
+                </image>
+            </ImageView>
+        </FlowPane>
+        
+        <!-- Stats labels to the right of the computer image -->
+        <VBox GridPane.rowIndex="3" GridPane.columnIndex="2"
+              GridPane.halignment="LEFT" GridPane.valignment="CENTER"
+              alignment="CENTER_LEFT">
+            <!-- Label that shows the winner of the round-->
+            <Label fx:id="lblWinner" />
+            <!-- HBox that holds the labels for the player's score-->
+            <HBox maxWidth="200">
+                <Label text="Your Score:" />
+                <Label fx:id="lblPlayerScore" text="0" />
+            </HBox>
+            <!-- HBox that holds the labels for the computer's score-->
+            <HBox maxWidth="200">
+                <Label text="Computer Score:" />
+                <Label fx:id="lblCompScore" text="0" />
+            </HBox>
+        </VBox>
+        <!-- Buttons for resetting the resetting and exiting the game -->
+        <GridPane GridPane.rowIndex="4" GridPane.columnSpan="3">
+            <!-- Each button gets 50% of the size of the screen -->
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50.0"/>
+                <ColumnConstraints percentWidth="50.0"/>
+            </columnConstraints>
+            <children>
+                <Button GridPane.rowIndex="0" GridPane.columnIndex="0"
+                        text="_Reset" mnemonicParsing="true" 
+                        maxWidth="Infinity" fx:id="btnReset" 
+                        onAction="#reset" minWidth="200" />
+                <Button GridPane.rowIndex="0" GridPane.columnIndex="1"
+                        text="_Exit" mnemonicParsing="true" 
+                        maxWidth="Infinity" fx:id="btnExit" 
+                        onAction="#exit" minWidth="200" />
+            </children>
+        </GridPane>
+    </children>
+</GridPane>
+

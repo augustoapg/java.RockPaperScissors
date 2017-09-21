@@ -1,0 +1,33 @@
+/*
+    Name: Augusto Araujo Peres Goncalez
+    File:  main.css
+    Other Files in this Project:
+    Main.java
+    FXMLRps.fxml
+    FXMLRpsController.java
+    Rps.java
+    Player.java
+    
+    Main class: Main.java
+*/
+
+.label {
+    -fx-margin: 4 2 4 2; /* set top and bottom margins to 4 and sides to 2 */
+    -fx-font-weight: bold; /* make label bold */
+}
+
+.image-view {
+    -fx-margin: 4; /* all image borders to 4 */
+}
+
+#rock, #paper, #scissors {
+    -fx-background-color: green; /* to make the image border */
+}
+
+#header {
+    -fx-font-size: 2em; /* header label is twice the size */
+}
+
+#computer {
+    -fx-background-color: black; /* to make the image border */
+}
