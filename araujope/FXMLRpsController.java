@@ -1,6 +1,6 @@
 /*
     Name: Augusto Araujo Peres Goncalez
-    File:  FXMLRps.fxml
+    File:  FXMLRpsController.fxml
     Other Files in this Project:
     Main.java
     FXMLRps.fxml
