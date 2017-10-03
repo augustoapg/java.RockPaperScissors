@@ -1,7 +1,6 @@
 /*
     Name: Augusto Araujo Peres Goncalez
-    Assignment: Assignment 4
-    Program: Computer Systems Technology – Systems Analyst
+    Project: Rock Paper Scissors
     Date: 07/20/17
 
     Description:

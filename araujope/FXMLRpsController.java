@@ -24,8 +24,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 /**
- *
- * @author augus
+ * Controller of the game, which dictates the functionality of the application.
+ * 
+ * @author Augusto Araujo Peres Goncalez
  */
 public class FXMLRpsController implements Initializable {
 
